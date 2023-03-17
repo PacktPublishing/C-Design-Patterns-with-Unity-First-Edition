@@ -6,12 +6,12 @@ public class Invoker : MonoBehaviour
 {
     private Stack<CoupledCommand> _commands = new Stack<CoupledCommand>();
     private Stack<CoupledCommand> _redo = new Stack<CoupledCommand>();
-    private int _maxMoves = 6;
+    private int _maxMoves = 4;
 
     public void Execute(ReusableCommand command, UnitController receiver)
     {
         Debug.Log($"{command.ToString()} invoked...");
-        command.Execute(receiver);
+        command.Execute(receiver);    
     }
 
     public void Execute(CoupledCommand command)
@@ -35,9 +35,9 @@ public class Invoker : MonoBehaviour
         if (_commands.Count > 0)
         {
             var lastCommand = _commands.Pop();
+
             lastCommand.Undo();
             _redo.Push(lastCommand);
-
             Debug.Log("Command undone...");
         }
     }
@@ -48,8 +48,8 @@ public class Invoker : MonoBehaviour
         {
             var lastCommand = _redo.Pop();
             lastCommand.Execute();
-            _commands.Push(lastCommand);
 
+            _commands.Push(lastCommand);
             Debug.Log("Command redone...");
         }
     }

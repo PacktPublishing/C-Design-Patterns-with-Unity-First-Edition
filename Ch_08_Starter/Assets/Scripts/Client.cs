@@ -4,16 +4,17 @@ using UnityEngine;
 
 [RequireComponent(typeof(InputListener))]
 [RequireComponent(typeof(Invoker))]
+[RequireComponent(typeof(UnitController))]
 public class Client : MonoBehaviour
 {
-    public UnitManager unitManager;
-
     private InputListener _inputListener;
     private Invoker _invoker;
+    private UnitController _unitController;
 
     void Awake()
     {
         _inputListener = this.GetComponent<InputListener>();
         _invoker = this.GetComponent<Invoker>();
+        _unitController = this.GetComponent<UnitController>();
     }
 }

@@ -20,9 +20,9 @@ public class MoveCommand : CoupledCommand
     private Vector3 _startingPos;
     private Vector3 _endingPos;
 
-    public MoveCommand(UnitController receiver, Vector3 endPos) : base(receiver)
+    public MoveCommand(UnitController receiver, Direction direction) : base(receiver)
     {
-        this._endingPos = endPos;
+        this._endingPos = Utilities.TargetPosition(direction, receiver.transform);
     }
 
     public override void Execute()
@@ -31,8 +31,8 @@ public class MoveCommand : CoupledCommand
         receiver.Move(_endingPos);
     }
 
-    public override void Undo()    
+    public override void Undo()
     {
-        receiver.Move(_startingPos);    
+        receiver.Move(_startingPos);
     }
 }

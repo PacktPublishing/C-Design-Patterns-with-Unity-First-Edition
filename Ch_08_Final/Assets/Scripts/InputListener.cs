@@ -5,8 +5,8 @@ using UnityEngine;
 public class InputListener : MonoBehaviour
 {
     public UIManager UI;
-    public UnitManager unitManager;
 
+    private UnitController _unitController;
     private ReusableCommand _spacebar, _mKey, _bKey;
 
     void Start()
@@ -18,54 +18,8 @@ public class InputListener : MonoBehaviour
         UI.AddKeyBinding("Space", _spacebar.ToString());
         UI.AddKeyBinding("M", _mKey.ToString());
         UI.AddKeyBinding("B", _bKey.ToString());
-    }
 
-    public CoupledCommand GetMoveComamands()
-    {
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            return new MoveCommand(unitManager.unit, TargetPosition(Direction.Up));
-        }
-
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            return new MoveCommand(unitManager.unit, TargetPosition(Direction.Down));
-        }
-
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            return new MoveCommand(unitManager.unit, TargetPosition(Direction.Left));
-        }
-
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            return new MoveCommand(unitManager.unit, TargetPosition(Direction.Right));
-        }
-
-        return null;
-    }
-
-    private Vector3 TargetPosition(Direction direction)
-    {
-        Vector3 position = unitManager.unit.transform.position;
-
-        switch (direction)
-        {
-            case Direction.Up:
-                position.z += 1;
-                break;
-            case Direction.Down:
-                position.z -= 1;
-                break;
-            case Direction.Left:
-                position.x -= 1;
-                break;
-            case Direction.Right:
-                position.x += 1;
-                break;
-        }
-
-        return position;
+        _unitController = this.GetComponent<UnitController>();
     }
 
     public ReusableCommand GetActionCommands()
@@ -86,5 +40,30 @@ public class InputListener : MonoBehaviour
         }
 
         return null;
+    }
+
+    public CoupledCommand GetMoveComamands()
+    {
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            return new MoveCommand(_unitController.unit, Direction.Up);
+        }
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            return new MoveCommand(_unitController.unit, Direction.Down);
+        }
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            return new MoveCommand(_unitController.unit, Direction.Left);
+        }
+
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            return new MoveCommand(_unitController.unit, Direction.Right);
+        }
+
+        return null;    
     }
 }

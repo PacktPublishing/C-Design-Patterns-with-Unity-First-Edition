@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class UnitController : MonoBehaviour
 {
+    public List<UnitController> units = new List<UnitController>();
+    public int unitIndex = 0;
+
+    public UnitController unit
+    {
+        get
+        {
+            return units[unitIndex];
+        }
+    }
+
     public int distance;
     public GameObject projectile;
     public GameObject shield;
