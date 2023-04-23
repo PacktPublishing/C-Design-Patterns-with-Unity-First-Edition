@@ -1,21 +1,47 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-
-public enum EnemyStrategy { Aggressive, Healing, Neutral }
+using TMPro;
 
 public class Client : MonoBehaviour
 {
-    public EnemyStrategy EnemyStrategy;
-    public EnemyContext EnemyContext;
+    public TMP_Text Leaderboard;
+    public List<Player> Players;
+
+    private LeaderboardContext _context;
 
     void Start()
     {
-        var playerContext = new DifficultyContext("Player");
-        playerContext.ShowDifficultySettings();
+        _context = new LeaderboardContext();
+        var defaultList = _context.SortPlayers(Players);
 
-        playerContext.SetStrategy(new Nightmare());
-        playerContext.ShowDifficultySettings();
+        UpdateLeaderboard(defaultList);
 
-        var enemyContext = new DifficultyContext("Enemy", new Normal());
-        enemyContext.ShowDifficultySettings();
+    }
+
+    public void RankSort()
+    {
+        _context.SetStrategy(new TopRankSort());
+        var rankedList = _context.SortPlayers(Players);
+
+        UpdateLeaderboard(rankedList);
+    }
+
+    public void AlphabeticalSort()
+    {
+        _context.SetStrategy(new AlphabeticalSort());
+        var alphabeticalList = _context.SortPlayers(Players);
+
+        UpdateLeaderboard(alphabeticalList);
+    }
+
+    private void UpdateLeaderboard(List<Player> players)
+    {
+        Leaderboard.text = "";
+
+        for (int i = 0; i < players.Count; i++)
+        {
+            Leaderboard.text += $"#{i + 1}: {players[i].name}\n\n";
+        }
     }
 }

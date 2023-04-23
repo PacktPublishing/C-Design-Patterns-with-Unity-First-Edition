@@ -1,18 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Client : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public TMP_Text Leaderboard;
+    public List<Player> Players;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void RankSort()
     {
-        
+
+    }
+
+    public void AlphabeticalSort()
+    {
+
+    }
+
+    private void UpdateLeaderboard(List<Player> players)
+    {
+        Leaderboard.text = "";
+
+        for (int i = 0; i < players.Count; i++)
+        {
+            Leaderboard.text += $"#{i + 1}: {players[i].name}\n\n";
+        }
     }
 }
