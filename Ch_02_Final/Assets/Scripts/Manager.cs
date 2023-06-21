@@ -6,12 +6,28 @@ using UnityEngine.SceneManagement;
 
 public class Manager : MonoBehaviour
 {
+    public static Manager Instance;
+
     public int score = 0;
     public int startingLevel = 1;
 
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            Debug.Log("New instance initialized...");
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else if (Instance != this)
+        {
+            Destroy(this.gameObject);
+            Debug.Log("Duplicate instance found and deleted...");
+        }
+    }
+
     public void StartGame()
     {
-        Debug.Log("New game has started...");
-        SceneManager.LoadScene(startingLevel);
+        // … No changes needed …
     }
 }
