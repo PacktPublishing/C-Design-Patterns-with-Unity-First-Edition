@@ -5,17 +5,8 @@ using System;
 
 public interface IPrototype
 {
-    public IPrototype ShallowClone();
-    public IPrototype DeepClone();
-}
-
-public class Item
-{
-    public string Name;
-    public Item(string name)
-    {
-        this.Name = name;
-    }
+    IPrototype ShallowClone();
+    IPrototype DeepClone();
 }
 
 public class Enemy : IPrototype
@@ -52,7 +43,7 @@ public class Enemy : IPrototype
 
         try
         {
-            newPrototype = (IPrototype)base.MemberwiseClone();
+            newPrototype = (IPrototype)this.MemberwiseClone();
         }
         catch (Exception e)
         {

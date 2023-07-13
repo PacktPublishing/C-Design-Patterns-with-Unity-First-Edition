@@ -24,14 +24,17 @@ public class PrefabSpawner : MonoBehaviour
             switch (random)
             {
                 case 1:
-                    clone = (BaseEnemy)factory["Ogre"].Copy();
+                    clone = (BaseEnemy)factory["Ogre"].Copy(this.transform);
                     break;
                 case 2:
-                    clone = (BaseEnemy)factory["Knight"].Copy();
+                    clone = (BaseEnemy)factory["Knight"].Copy(this.transform);
                     break;
             }
 
-            clone.Attack();
+            if(clone)
+            {
+                clone.Attack();
+            }
         }
     }
 }

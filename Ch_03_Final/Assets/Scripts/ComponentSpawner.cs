@@ -30,7 +30,10 @@ public class ComponentSpawner : MonoBehaviour
                     break;
             }
 
-            clonedEnemy.Attack();
+            if (clonedEnemy)
+            {
+                clonedEnemy.Attack();
+            }
         }
     }
 }

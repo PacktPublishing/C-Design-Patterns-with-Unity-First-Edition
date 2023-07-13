@@ -1,9 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class Client : MonoBehaviour
 {
-    public TMP_Text GameSaves;
+    public Slider HPSlider;
+    public Slider MPSlider;
+    public Slider INTSlider;
+
+    public void Save()
+    {
+
+    }
+
+    public void Restore()
+    {
+
+    }
 }

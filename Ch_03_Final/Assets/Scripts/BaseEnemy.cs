@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface ICopy
 {
-    public ICopy Copy();
+    public ICopy Copy(Transform parent);
 }
 
 public abstract class BaseEnemy : MonoBehaviour, ICopy
@@ -23,14 +23,13 @@ public abstract class BaseEnemy : MonoBehaviour, ICopy
         Debug.LogFormat($"{Name} attacks for {Damage} HP!");
     }
 
-    public ICopy Copy()
+    public ICopy Copy(Transform parent)
     {
         BaseEnemy clone = Instantiate(this);
-        GameObject spawner = GameObject.Find("Enemy Spawner");
-        var enemyRange = new Vector3(Random.Range(-7, 7), 0, Random.Range(-7, 7));
+        var clonePosition = new Vector3(Random.Range(-7, 7), 0, Random.Range(-7, 7));
 
-        clone.transform.SetParent(spawner.transform);
-        clone.transform.localPosition = enemyRange;
+        clone.transform.SetParent(parent);
+        clone.transform.localPosition = clonePosition;
 
         return clone;
     }

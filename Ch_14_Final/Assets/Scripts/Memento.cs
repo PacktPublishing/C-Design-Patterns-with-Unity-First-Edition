@@ -5,28 +5,19 @@ using System;
 
 public class Memento
 {
-    public float MoveSpeed { get; private set; }
-    public float TurnSpeed { get; private set; }
-    public Vector3 LastCheckpoint { get; private set; }
+    public float HP { get; protected set; }
+    public float MP { get; protected set; }
+    public float INT { get; protected set; }
 
-    public Memento(float move, float turn, Vector3 position)
+    private DateTime _date;
+
+    public Memento(float hp, float mp, float intel)
     {
-        this.MoveSpeed = move;
-        this.TurnSpeed = turn;
-        this.LastCheckpoint = position;
-    }
-}
+        HP = hp;
+        MP = mp;
+        INT = intel;
+        _date = DateTime.Now;
 
-public class SaveMemento
-{
-    public string Name { get; private set; }
-    public int Level { get; private set; }
-    public string Date { get; private set; }
-
-    public SaveMemento(string name, int level)
-    {
-        this.Name = name;
-        this.Level = level;
-        this.Date = DateTime.Now.ToString("MM/dd/yyyy hh:mm tt");
+        Debug.Log($"New memento created at {_date}");
     }
 }

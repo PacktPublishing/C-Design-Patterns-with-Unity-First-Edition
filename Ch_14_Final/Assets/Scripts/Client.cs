@@ -1,31 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class Client : MonoBehaviour
 {
-    public TMP_Text GameSaves;
-    public Player Originator;
-    public Caretaker Caretaker;
+    public Slider HPSlider;
+    public Slider MPSlider;
+    public Slider INTSlider;
+    public Character _originator;
+
+    private Caretaker _caretaker;
 
     void Awake()
     {
-        Caretaker = new Caretaker();
-        var mementoData = Originator.NewSave();
-        Caretaker.Memento = mementoData;
+        _caretaker = new Caretaker(_originator);
+        Save();
     }
 
-    void Update()
+    public void Save()
     {
-        if(Input.GetKeyDown(KeyCode.I))
-        {
-            Originator.IncreaseDifficulty();
-        }
+        _caretaker.Save();
+    }
 
-        if(Input.GetKeyDown(KeyCode.R))
-        {
-            Originator.Restore(Caretaker.Memento);
-        }
+    public void Restore()
+    {
+        _caretaker.RestoreLast();
+
+        HPSlider.value = _originator.HP;
+        MPSlider.value = _originator.MP;
+        INTSlider.value = _originator.INT;
     }
 }
