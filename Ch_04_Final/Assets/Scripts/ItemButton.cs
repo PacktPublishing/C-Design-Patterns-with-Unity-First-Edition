@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ItemButton : MonoBehaviour
 {
-    public void Configure(Item item)
+    public void Configure(IItem item)
     {
         this.gameObject.name = $"{item.GetType().Name} (UI)";
 

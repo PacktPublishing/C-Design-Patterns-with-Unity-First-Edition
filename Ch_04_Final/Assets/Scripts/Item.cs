@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface Item
+public interface IItem
 {
     void Equip();
 }
 
-public class Pebble : MonoBehaviour, Item
+public class Pebble : MonoBehaviour, IItem
 {
     public void Equip()
     {
@@ -15,7 +15,7 @@ public class Pebble : MonoBehaviour, Item
     }
 }
 
-public class CursedKnife : MonoBehaviour, Item
+public class CursedKnife : MonoBehaviour, IItem
 {
     public void Equip()
     {
@@ -26,7 +26,7 @@ public class CursedKnife : MonoBehaviour, Item
     }
 }
 
-public class Potion : MonoBehaviour, Item    
+public class Potion : MonoBehaviour, IItem    
 {
     public void Equip()    
     {

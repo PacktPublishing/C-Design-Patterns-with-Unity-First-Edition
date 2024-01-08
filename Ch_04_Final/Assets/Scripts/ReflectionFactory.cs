@@ -20,9 +20,9 @@ public class ReflectionFactory
         Spawner = new GameObject();
         Spawner.name = "Reflection Factory";
 
-        var itemTypes = Assembly.GetAssembly(typeof(Item)).GetTypes();
+        var itemTypes = Assembly.GetAssembly(typeof(IItem)).GetTypes();
         var filteredItems = itemTypes.Where(item => !item.IsInterface &&
-                                            typeof(Item).IsAssignableFrom(item));
+                                            typeof(IItem).IsAssignableFrom(item));
 
 
         foreach (var type in filteredItems)    
@@ -31,18 +31,18 @@ public class ReflectionFactory
         }
     }
 
-    public Item Create(string itemName, GameObject model, Vector3 position)    
+    public IItem Create(string itemName, GameObject model, Vector3 position)    
     {
         if (_items.ContainsKey(itemName))    
         {
             Type type = _items[itemName];
             var obj = GameObject.Instantiate(model);
-            var item = obj.AddComponent(type) as Item;
+            var item = obj.AddComponent(type) as IItem;
 
             obj.transform.position = position;
             obj.transform.SetParent(Spawner.transform);
 
-            return obj.GetComponent(type) as Item;
+            return obj.GetComponent(type) as IItem;
         }
 
         return null;    

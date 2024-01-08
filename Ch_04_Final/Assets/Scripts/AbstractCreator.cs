@@ -13,7 +13,7 @@ public abstract class AbstractCreator
         Model = model;
     }
 
-    public abstract Item Create();
+    public abstract IItem Create();
 }
 
 public class PebbleFactory : AbstractCreator
@@ -23,7 +23,7 @@ public class PebbleFactory : AbstractCreator
         Spawner.name = "Pebble Factory";
     }
 
-    public override Item Create()
+    public override IItem Create()
     {
         var pebble = GameObject.Instantiate(Model);
         pebble.AddComponent<Pebble>();
@@ -41,7 +41,7 @@ public class CursedKnifeFactory : AbstractCreator
         Spawner.name = "Cursed Knife Factory";
     }
 
-    public override Item Create()    
+    public override IItem Create()    
     {
         var knife = GameObject.Instantiate(Model);
         knife.AddComponent<CursedKnife>();
@@ -59,7 +59,7 @@ public class PotionFactory : AbstractCreator
         Spawner.name = "Potion Factory";
     }
 
-    public override Item Create()    
+    public override IItem Create()    
     {
         var potion = GameObject.Instantiate(Model);
         potion.AddComponent<Potion>();

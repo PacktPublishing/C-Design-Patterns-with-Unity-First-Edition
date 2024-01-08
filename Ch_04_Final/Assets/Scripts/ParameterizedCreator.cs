@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ParameterizedCreator    
 {
-    public virtual Item Create(string itemName)    
+    public virtual IItem Create(string itemName)    
     {
         switch (itemName)    
         {
@@ -20,7 +20,7 @@ public class ParameterizedCreator
 
 public class NoobFactory : ParameterizedCreator    
 {
-    public override Item Create(string itemName)    
+    public override IItem Create(string itemName)    
     {
         switch (itemName)    
         {

@@ -10,8 +10,8 @@ public class ConcreteCreator
     public GameObject KnifeModel { get; protected set; }
     public GameObject PotionModel { get; protected set; }
 
-    protected List<Item> _items = new List<Item>();
-    public List<Item> Items
+    protected List<IItem> _items = new List<IItem>();
+    public List<IItem> Items
     {
         get { return _items; }
     }
@@ -28,7 +28,7 @@ public class ConcreteCreator
         CreateInventory();
     }
 
-    public virtual Item NormalItem()    
+    public virtual IItem NormalItem()    
     {
         var pebble = GameObject.Instantiate(PebbleModel);
         var item = pebble.AddComponent<Pebble>();
@@ -40,7 +40,7 @@ public class ConcreteCreator
         return pebble.GetComponent<Pebble>();
     }
 
-    public virtual Item RareItem()    
+    public virtual IItem RareItem()    
     {
         var knife = GameObject.Instantiate(KnifeModel);
         var item = knife.AddComponent<CursedKnife>();
@@ -52,7 +52,7 @@ public class ConcreteCreator
         return knife.GetComponent<CursedKnife>();
     }
 
-    public virtual Item HealingItem()    
+    public virtual IItem HealingItem()    
     {
         var potion = GameObject.Instantiate(PotionModel);
         var item = potion.AddComponent<Potion>();
@@ -64,9 +64,9 @@ public class ConcreteCreator
         return potion.GetComponent<Potion>();
     }
 
-    public List<Item> CreateInventory()    
+    public List<IItem> CreateInventory()    
     {
-        return new List<Item>()   
+        return new List<IItem>()   
         {
             NormalItem(),
             RareItem(),

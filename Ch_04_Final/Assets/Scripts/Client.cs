@@ -21,14 +21,14 @@ public class Client : MonoBehaviour
 
         var itemFactory = new ReflectionFactory();
 
-        List<Item> items = new List<Item>()    
+        List<IItem> items = new List<IItem>()    
         {
             itemFactory.Create("Pebble", PebbleModel, pos[0]),
             itemFactory.Create("CursedKnife", KnifeModel, pos[1]),
             itemFactory.Create("Potion", PotionModel, pos[2])   
         };
 
-        foreach (Item item in items)    
+        foreach (IItem item in items)    
         {
             var button = Instantiate(ButtonPrefab);    
 
