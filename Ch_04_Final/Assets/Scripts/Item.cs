@@ -19,7 +19,7 @@ public class CursedKnife : MonoBehaviour, IItem
 {
     public void Equip()
     {
-        var player = GameObject.FindObjectOfType<Player>();    
+        var player = GameObject.FindAnyObjectByType<Player>();    
         player.SetColor(Color.magenta);    
 
         Debug.Log($"Woops, you're cursed...");
@@ -30,10 +30,10 @@ public class Potion : MonoBehaviour, IItem
 {
     public void Equip()    
     {
-        var player = GameObject.FindObjectOfType<Player>();    
+        var player = GameObject.FindAnyObjectByType<Player>();    
         player.SetColor(Color.green);    
 
-        var manager = GameObject.FindObjectOfType<Manager>();    
+        var manager = GameObject.FindAnyObjectByType<Manager>();    
         manager.HP += 5;    
         manager.Boost++;    
 
