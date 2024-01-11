@@ -22,7 +22,7 @@ AssetImportWorker1
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-54250
+52220
 Successfully changed project path to: /Users/harrisonferrone/Documents/GitHub/C-Design-Patterns-with-Unity-First-Edition/Ch_02_Starter
 /Users/harrisonferrone/Documents/GitHub/C-Design-Patterns-with-Unity-First-Edition/Ch_02_Starter
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -56,11 +56,11 @@ Successfully changed project path to: /Users/harrisonferrone/Documents/GitHub/C-
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [8089034432] Host "[IP] 192.168.1.114 [Port] 0 [Flags] 2 [Guid] 1641353090 [EditorId] 1641353090 [Version] 1048832 [Id] OSXEditor(0,Harrisons-MacBook-Pro.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [8089034432] Host "[IP] 192.168.0.98 [Port] 0 [Flags] 2 [Guid] 4244750210 [EditorId] 4244750210 [Version] 1048832 [Id] OSXEditor(0,Harrisons-MacBook-Pro.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [8089034432] Host "[IP] 192.168.1.114 [Port] 0 [Flags] 2 [Guid] 1641353090 [EditorId] 1641353090 [Version] 1048832 [Id] OSXEditor(0,Harrisons-MacBook-Pro.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [8089034432] Host "[IP] 192.168.0.98 [Port] 0 [Flags] 2 [Guid] 4244750210 [EditorId] 4244750210 [Version] 1048832 [Id] OSXEditor(0,Harrisons-MacBook-Pro.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Library Redirect Path: Library/Refreshing native plugins compatible for Editor in 8.62 ms, found 2 plugins.
+Library Redirect Path: Library/Refreshing native plugins compatible for Editor in 3.02 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2023.1.5f1 (9dce81d9e7e0)
 [Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/2023.1.5f1/Unity.app/Contents/Resources/UnitySubsystems
@@ -75,7 +75,7 @@ Initialize mono
 Mono path[0] = '/Applications/Unity/Hub/Editor/2023.1.5f1/Unity.app/Contents/Managed'
 Mono path[1] = '/Applications/Unity/Hub/Editor/2023.1.5f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit-macos'
 Mono config path = '/Applications/Unity/Hub/Editor/2023.1.5f1/Unity.app/Contents/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56092
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56036
 Begin MonoManager ReloadAssembly
 icall.c:1842:
 icall.c:1842:
@@ -89,41 +89,41 @@ icall.c:1842:
 icall.c:1842:
 Registering precompiled unity dll's ...
 Register platform support module: /Applications/Unity/Hub/Editor/2023.1.5f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
-Registered in 0.001317 seconds.
-- Loaded All Assemblies, in  0.252 seconds
+Registered in 0.000582 seconds.
+- Loaded All Assemblies, in  0.253 seconds
 Native extension for OSXStandalone target not found
 Mono: successfully reloaded assembly
 icall.c:1842:
 icall.c:1842:
-- Finished resetting the current domain, in  0.221 seconds
-Domain Reload Profiling: 473ms
-	BeginReloadAssembly (83ms)
+- Finished resetting the current domain, in  0.222 seconds
+Domain Reload Profiling: 475ms
+	BeginReloadAssembly (62ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (0ms)
-	RebuildCommonClasses (24ms)
-	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (30ms)
-	LoadAllAssembliesAndSetupDomain (106ms)
-		LoadAssemblies (83ms)
+	RebuildCommonClasses (28ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (32ms)
+	LoadAllAssembliesAndSetupDomain (122ms)
+		LoadAssemblies (61ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (104ms)
-			TypeCache.Refresh (103ms)
-				TypeCache.ScanAssembly (96ms)
+		AnalyzeDomain (120ms)
+			TypeCache.Refresh (119ms)
+				TypeCache.ScanAssembly (111ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (221ms)
+	FinalizeReload (222ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (188ms)
+		SetupLoadedEditorAssemblies (187ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (5ms)
 			SetLoadedEditorAssemblies (5ms)
-			BeforeProcessingInitializeOnLoad (5ms)
-			ProcessInitializeOnLoadAttributes (130ms)
-			ProcessInitializeOnLoadMethodAttributes (44ms)
+			BeforeProcessingInitializeOnLoad (4ms)
+			ProcessInitializeOnLoadAttributes (134ms)
+			ProcessInitializeOnLoadMethodAttributes (38ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -146,83 +146,67 @@ icall.c:1842:
 icall.c:1842:
 Symbol file LoadedFromMemory doesn't match image /Users/harrisonferrone/Documents/GitHub/C-Design-Patterns-with-Unity-First-Edition/Ch_02_Starter/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image /Users/harrisonferrone/Documents/GitHub/C-Design-Patterns-with-Unity-First-Edition/Ch_02_Starter/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  0.577 seconds
-Refreshing native plugins compatible for Editor in 0.70 ms, found 2 plugins.
+- Loaded All Assemblies, in  0.521 seconds
+Refreshing native plugins compatible for Editor in 0.60 ms, found 2 plugins.
 Native extension for OSXStandalone target not found
 Mono: successfully reloaded assembly
 - Finished resetting the current domain, in  0.371 seconds
-Domain Reload Profiling: 950ms
-	BeginReloadAssembly (206ms)
+Domain Reload Profiling: 892ms
+	BeginReloadAssembly (149ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (4ms)
+		DisableScriptedObjects (3ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (27ms)
-	RebuildCommonClasses (24ms)
+		CreateAndSetChildDomain (24ms)
+	RebuildCommonClasses (27ms)
 	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (22ms)
+	initialDomainReloadingComplete (21ms)
 	LoadAllAssembliesAndSetupDomain (316ms)
-		LoadAssemblies (173ms)
+		LoadAssemblies (150ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (174ms)
-			TypeCache.Refresh (165ms)
-				TypeCache.ScanAssembly (157ms)
+		AnalyzeDomain (196ms)
+			TypeCache.Refresh (187ms)
+				TypeCache.ScanAssembly (179ms)
 			ScanForSourceGeneratedMonoScriptInfo (6ms)
 			ResolveRequiredComponents (3ms)
-	FinalizeReload (373ms)
+	FinalizeReload (371ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (252ms)
+		SetupLoadedEditorAssemblies (247ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (4ms)
-			SetLoadedEditorAssemblies (2ms)
+			SetLoadedEditorAssemblies (3ms)
 			BeforeProcessingInitializeOnLoad (48ms)
-			ProcessInitializeOnLoadAttributes (185ms)
-			ProcessInitializeOnLoadMethodAttributes (13ms)
+			ProcessInitializeOnLoadAttributes (178ms)
+			ProcessInitializeOnLoadMethodAttributes (14ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (3ms)
 Launching external process: /Applications/Unity/Hub/Editor/2023.1.5f1/Unity.app/Contents/Tools/UnityShaderCompiler
 Launched and connected shader compiler UnityShaderCompiler after 0.05 seconds
-Refreshing native plugins compatible for Editor in 0.62 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.60 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3008 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 30 unused Assets / (41.4 KB). Loaded Objects now: 3536.
-Memory consumption went from 128.2 MB to 128.2 MB.
-Total: 2.839958 ms (FindLiveObjects: 0.097750 ms CreateObjectMapping: 0.037584 ms MarkObjects: 2.609708 ms  DeleteObjects: 0.094125 ms)
+Unloading 30 unused Assets / (41.1 KB). Loaded Objects now: 3536.
+Memory consumption went from 128.2 MB to 128.1 MB.
+Total: 2.886334 ms (FindLiveObjects: 0.077666 ms CreateObjectMapping: 0.035709 ms MarkObjects: 2.679250 ms  DeleteObjects: 0.092875 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
-  custom:scripting/monoscript/fileName/VSCodeDiscovery.cs: d83b4aff57b85f583bfc60cfbb7e527e -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:scripting/monoscript/fileName/GUIDGenerator.cs: 6dd6e35608006bcfade7642e5de04c6b -> 
-  custom:scripting/monoscript/fileName/VSCodeScriptEditor.cs: 976f19e81f1a1748ecd5ce0eeab6e373 -> 
   custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:scripting/monoscript/fileName/FileIO.cs: e12d7b1846fe00e4e229609939e0062b -> 
-  custom:scripting/monoscript/fileName/ProjectGeneration.cs: 7c3150a04cd2de8ef9bdd48a0f99701a -> 9a60ae906ea060222f7967033c27f7ed
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:scripting/monoscript/fileName/StringUtils.cs: e49393bed9b27f8092372b1c93fd8ad8 -> 2be5fb51e6f0660c955416f4d8f6f7ad
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
   custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
-  custom:scripting/monoscript/fileName/AssemblyNameProvider.cs: 170b0fd934f78f2e6a09342014bfa1fc -> 5210529ddc67cdb852122f447527c528
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 171828.482414 seconds.
-  path: Assets/Scenes
-  artifactKey: Guid(74558bdaa1ca14f3485743bb9ac809d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes using Guid(74558bdaa1ca14f3485743bb9ac809d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f469412719e69d8aa5662aa351750d9') in 0.001048 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
 ========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
-Thread 0x2a7c87000 may have been prematurely finalized
+Thread 0x2b254f000 may have been prematurely finalized
 icall.c:1842:
 icall.c:1842:
 icall.c:1842:
@@ -237,67 +221,60 @@ icall.c:1842:
 icall.c:1842:
 Symbol file LoadedFromMemory doesn't match image /Users/harrisonferrone/Documents/GitHub/C-Design-Patterns-with-Unity-First-Edition/Ch_02_Starter/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image /Users/harrisonferrone/Documents/GitHub/C-Design-Patterns-with-Unity-First-Edition/Ch_02_Starter/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  0.411 seconds
-Refreshing native plugins compatible for Editor in 0.60 ms, found 2 plugins.
+- Loaded All Assemblies, in  0.455 seconds
+Refreshing native plugins compatible for Editor in 0.65 ms, found 2 plugins.
 Native extension for OSXStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.413 seconds
-Domain Reload Profiling: 825ms
-	BeginReloadAssembly (90ms)
+- Finished resetting the current domain, in  0.441 seconds
+Domain Reload Profiling: 896ms
+	BeginReloadAssembly (95ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (4ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (33ms)
-	RebuildCommonClasses (24ms)
+		CreateAndSetChildDomain (36ms)
+	RebuildCommonClasses (29ms)
 	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (12ms)
-	LoadAllAssembliesAndSetupDomain (277ms)
-		LoadAssemblies (142ms)
+	initialDomainReloadingComplete (13ms)
+	LoadAllAssembliesAndSetupDomain (309ms)
+		LoadAssemblies (147ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (164ms)
-			TypeCache.Refresh (161ms)
-				TypeCache.ScanAssembly (155ms)
+		AnalyzeDomain (191ms)
+			TypeCache.Refresh (188ms)
+				TypeCache.ScanAssembly (182ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (2ms)
-	FinalizeReload (414ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (442ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (236ms)
+		SetupLoadedEditorAssemblies (260ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (3ms)
-			SetLoadedEditorAssemblies (2ms)
-			BeforeProcessingInitializeOnLoad (45ms)
-			ProcessInitializeOnLoadAttributes (171ms)
-			ProcessInitializeOnLoadMethodAttributes (13ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (63ms)
+			ProcessInitializeOnLoadAttributes (175ms)
+			ProcessInitializeOnLoadMethodAttributes (15ms)
 			AfterProcessingInitializeOnLoad (1ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (3ms)
-Refreshing native plugins compatible for Editor in 0.59 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.64 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3000 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 3001 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 20 unused Assets / (30.0 KB). Loaded Objects now: 3537.
-Memory consumption went from 133.9 MB to 133.8 MB.
-Total: 3.075875 ms (FindLiveObjects: 0.085458 ms CreateObjectMapping: 0.032542 ms MarkObjects: 2.927209 ms  DeleteObjects: 0.030000 ms)
+Memory consumption went from 134.0 MB to 133.9 MB.
+Total: 2.885500 ms (FindLiveObjects: 0.086417 ms CreateObjectMapping: 0.037208 ms MarkObjects: 2.723875 ms  DeleteObjects: 0.037291 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
-  custom:scripting/monoscript/fileName/VSCodeDiscovery.cs: d83b4aff57b85f583bfc60cfbb7e527e -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:scripting/monoscript/fileName/GUIDGenerator.cs: 6dd6e35608006bcfade7642e5de04c6b -> 
-  custom:scripting/monoscript/fileName/VSCodeScriptEditor.cs: 976f19e81f1a1748ecd5ce0eeab6e373 -> 
   custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:scripting/monoscript/fileName/FileIO.cs: e12d7b1846fe00e4e229609939e0062b -> 
-  custom:scripting/monoscript/fileName/ProjectGeneration.cs: 7c3150a04cd2de8ef9bdd48a0f99701a -> 9a60ae906ea060222f7967033c27f7ed
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:scripting/monoscript/fileName/StringUtils.cs: e49393bed9b27f8092372b1c93fd8ad8 -> 2be5fb51e6f0660c955416f4d8f6f7ad
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
   custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
-  custom:scripting/monoscript/fileName/AssemblyNameProvider.cs: 170b0fd934f78f2e6a09342014bfa1fc -> 5210529ddc67cdb852122f447527c528
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
   custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 

@@ -28,11 +28,11 @@ public class SupportAlly
             return "No components listed, use the Director class!";    
         }
 
-        var blueprintLog = $"Support type: {allyType}\n\n";    
+        string blueprintLog = $"   Support type: {allyType}\n\n";    
 
         foreach (GameObject component in components)    
         {
-            blueprintLog += $" - {component.name} --- installed\n";    
+            blueprintLog += $"    - {component.name} --- installed\n";    
         }
 
         return blueprintLog;    

@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Material { }
-public class Iron : Material { }
-public class Dragonscale : Material { }
+public abstract class UpgradeMaterial { }
+public class Iron : UpgradeMaterial { }
+public class Dragonscale : UpgradeMaterial { }
 
 public abstract class Item
 {
-    public abstract void Upgrade(Material material);
+    public abstract void Upgrade(UpgradeMaterial material);
 }
 
 public class Sword : Item
 {
-    public override void Upgrade(Material material)
+    public override void Upgrade(UpgradeMaterial material)
     {
         if (material.GetType().Name == "Iron")
         {
@@ -28,7 +28,7 @@ public class Sword : Item
 
 public class Lance : Item
 {
-    public override void Upgrade(Material material)
+    public override void Upgrade(UpgradeMaterial material)
     {
         if (material.GetType().Name == "Dragonscale")
         {
@@ -44,12 +44,12 @@ public class Lance : Item
 public abstract class AbstractRecipeFactory
 {
     public abstract Item GetItem();
-    public abstract Material GetMaterial();
+    public abstract UpgradeMaterial GetMaterial();
 }
 
 public class IronSwordUpgrade : AbstractRecipeFactory
 {
-    public override Material GetMaterial()
+    public override UpgradeMaterial GetMaterial()
     {
         return new Iron();
     }
@@ -62,7 +62,7 @@ public class IronSwordUpgrade : AbstractRecipeFactory
 
 public class DragoniteLanceUpgrade : AbstractRecipeFactory
 {
-    public override Material GetMaterial()
+    public override UpgradeMaterial GetMaterial()
     {
         return new Dragonscale();
     }

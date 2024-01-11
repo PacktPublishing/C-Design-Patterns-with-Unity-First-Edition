@@ -4,14 +4,14 @@ using UnityEngine;
 
 public interface IForge
 {
-    public void Craft();
-    public void Disassemble();
+    void Craft();
+    void Disassemble();
 }
 
 public interface IMerchant
 {
-    public void Buy();
-    public void Sell();
+    void Buy();
+    void Sell();
 }
 
 public class BlacksmithForge : IForge
@@ -68,8 +68,8 @@ public class FusionMerchant : IMerchant
 
 public interface IAbstractFactory
 {
-    public IForge CreateForgeSystem();
-    public IMerchant CreateMerchantSystem();
+    IForge CreateForgeSystem();
+    IMerchant CreateMerchantSystem();
 }
 
 public class BlacksmithFactory : IAbstractFactory
