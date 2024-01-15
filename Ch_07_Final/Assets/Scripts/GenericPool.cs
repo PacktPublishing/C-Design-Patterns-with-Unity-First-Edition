@@ -5,7 +5,7 @@ using UnityEngine.Pool;
 
 public class GenericPool : MonoBehaviour
 {
-    public static GenericPool shared;
+    public static GenericPool Shared;
 
     public Projectile pooledObject;
     public int defaultCapacity = 5;    
@@ -14,7 +14,7 @@ public class GenericPool : MonoBehaviour
 
     private object _poolLock = new object();
     private IObjectPool<Projectile> _pool;
-    public IObjectPool<Projectile> pool
+    public IObjectPool<Projectile> Pool
     {
         get
         {
@@ -41,7 +41,7 @@ public class GenericPool : MonoBehaviour
 
     void Awake()
     {
-        shared = this;
+        Shared = this;
     }
 
     private Projectile CreatePooledObject()
@@ -60,7 +60,8 @@ public class GenericPool : MonoBehaviour
 
     private void ReturnToPool(Projectile bullet)    
     {
-        bullet.gameObject.SetActive(false);    
+        bullet.gameObject.SetActive(false);
+        bullet.Reset();
     }
 
     private void DestroyPooledObject(Projectile bullet)    

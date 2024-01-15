@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
 
     void CreateBullet()
     {
-        Projectile newBullet = GenericPool.shared.pool.Get();
+        Projectile newBullet = GenericPool.Shared.Pool.Get();
         newBullet.transform.position = this.transform.position;
         Rigidbody bulletRB = newBullet.GetComponent<Rigidbody>();
         bulletRB.velocity = this.transform.forward * bulletSpeed;

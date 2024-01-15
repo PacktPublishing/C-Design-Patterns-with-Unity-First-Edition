@@ -52,6 +52,7 @@ public class ObjectPool : MonoBehaviour
     {
         lock(_available)
         {
+            bullet.Reset();
             _available.Enqueue(bullet);
             bullet.gameObject.SetActive(false);
         }

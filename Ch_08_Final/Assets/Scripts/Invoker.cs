@@ -10,7 +10,7 @@ public class Invoker : MonoBehaviour
 
     public void Execute(ReusableCommand command, UnitController receiver)
     {
-        Debug.Log($"{command.ToString()} invoked...");
+        Debug.Log($"{command.ToString()} invoked on {receiver.ToString()}...");
         command.Execute(receiver);    
     }
 
