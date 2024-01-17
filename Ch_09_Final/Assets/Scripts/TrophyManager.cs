@@ -7,7 +7,7 @@ public class TrophyManager : MonoBehaviour
     public int HealthMissed = 0;
     public int PlayerHits = 0;
 
-    public void OnEnable()    
+    void OnEnable()    
     {
         BasePrefab.OnHealthDestroyed += HealthDestroyed;
         BasePrefab.OnEnemyDestroyed += EnemyDestroyed;
@@ -34,5 +34,11 @@ public class TrophyManager : MonoBehaviour
     {
         Debug.Log("Achievement unlocked: First blood!");
         Debug.Log(message);
+    }
+
+    void OnDisable()
+    {
+        BasePrefab.OnHealthDestroyed -= HealthDestroyed;
+        BasePrefab.OnEnemyDestroyed -= EnemyDestroyed;
     }
 }

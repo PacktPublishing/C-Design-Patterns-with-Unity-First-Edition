@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public UIManager uIManager;
+    public UIManager uiManager;
     public float moveSpeed = 10f;
-    public int health
+    public int Health
     {
         get { return _health; }
         set
@@ -38,13 +38,13 @@ public class Player : MonoBehaviour
     {
         if(collision.gameObject.tag == "Target")
         {
-            health--;
+            Health--;
             Debug.Log("Player damaged!");
             Destroy(collision.gameObject);
         }
         else if(collision.gameObject.tag == "Health")
         {
-            health++;
+            Health++;
             Debug.Log("Health collected!");
             Destroy(collision.gameObject);
         }
