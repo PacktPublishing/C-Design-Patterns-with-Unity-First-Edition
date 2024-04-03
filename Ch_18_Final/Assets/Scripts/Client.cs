@@ -6,15 +6,13 @@ public class Client : MonoBehaviour
 {
     public int gridRows = 10;
     public int gridColumns = 10;
-    public Transform parent;
+    public Transform gridParent;
 
     private ExtrinsicState _context = new ExtrinsicState();
-    private SOFactory _factory;
 
     void Start()
     {
-        _context.parent = parent;
-        _factory = this.GetComponent<SOFactory>();
+        _context.parent = gridParent;
 
         GenerateCorners();
         GenerateTerrain();
@@ -32,15 +30,15 @@ public class Client : MonoBehaviour
 
                 if (Random.Range(0, 5) == 0)
                 {
-                    tile = _factory.GetFlyweight(TerrainType.Grass);
+                    tile = SOFactory.GetFlyweight(TerrainType.Grass);
                 }
                 else if (Random.Range(0, 10) == 5)
                 {
-                    tile = _factory.GetFlyweight(TerrainType.Water);
+                    tile = SOFactory.GetFlyweight(TerrainType.Water);
                 }
                 else
                 {
-                    tile = _factory.GetFlyweight(TerrainType.Ground);
+                    tile = SOFactory.GetFlyweight(TerrainType.Ground);
                 }
 
                 tile.Create(_context);
@@ -56,7 +54,7 @@ public class Client : MonoBehaviour
             _context.xCoord = corner.x;
             _context.zCoord = corner.y;
 
-            var cornerTile = _factory.GetCorner();
+            var cornerTile = SOFactory.GetCorner();
             cornerTile.Create(_context);
         }
     }

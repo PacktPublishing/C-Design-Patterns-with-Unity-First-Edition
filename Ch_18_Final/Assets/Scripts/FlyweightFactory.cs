@@ -28,14 +28,17 @@ public class FlyweightFactory
                     break;
             }
 
+            Debug.Log("New flyweight created…");
             _cache.Add(key, newTile);
         }
 
+        Debug.Log("Flyweight returned…");
         return _cache[key];
     }
 
     public static Corner GetCorner()
     {
+        Debug.Log("Unshared flyweight created...");
         return new Corner();
     }
 }

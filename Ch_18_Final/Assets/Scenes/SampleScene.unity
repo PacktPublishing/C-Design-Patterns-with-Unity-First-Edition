@@ -292,7 +292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridRows: 10
   gridColumns: 10
-  parent: {fileID: 238506144}
+  gridParent: {fileID: 238506144}
 --- !u!114 &783501664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,10 +305,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66964ba68bcb6474d926e876ac33ae21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ground: {fileID: 11400000, guid: 3dae1758349554fed96b39d6d0b15b44, type: 2}
-  water: {fileID: 11400000, guid: ebef317042cf942a1be5a61cbe545838, type: 2}
-  grass: {fileID: 11400000, guid: 8a531e53761b54dc6a20e299bfc1c891, type: 2}
-  edge: {fileID: 11400000, guid: 7050a0c9459a44cf5baa49f617585d5b, type: 2}
+  tiles:
+  - {fileID: 11400000, guid: 7050a0c9459a44cf5baa49f617585d5b, type: 2}
+  - {fileID: 11400000, guid: 8a531e53761b54dc6a20e299bfc1c891, type: 2}
+  - {fileID: 11400000, guid: 3dae1758349554fed96b39d6d0b15b44, type: 2}
+  - {fileID: 11400000, guid: ebef317042cf942a1be5a61cbe545838, type: 2}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0

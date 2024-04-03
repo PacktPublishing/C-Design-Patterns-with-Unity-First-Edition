@@ -10,7 +10,7 @@ public class Corner : IFlyweight
 
     public Corner()
     {
-        _tile = FlyweightFactory.GetFlyweight(TerrainType.Edge);
+        _tile = SOFactory.GetFlyweight(TerrainType.Edge);
     }
 
     public void Create(ExtrinsicState context)

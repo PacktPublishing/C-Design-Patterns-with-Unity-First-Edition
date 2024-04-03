@@ -4,29 +4,25 @@ using UnityEngine;
 
 public class SOFactory : MonoBehaviour
 {
-    public SOTile ground;
-    public SOTile water;
-    public SOTile grass;
-    public SOTile edge;
+    public List<SOTile> tiles;
+    private static Dictionary<string, IFlyweight> _cache = new Dictionary<string, IFlyweight>();
 
-    public IFlyweight GetFlyweight(TerrainType type)
+    void Awake()
     {
-        switch (type)
+        foreach(SOTile tile in tiles)
         {
-            case TerrainType.Ground:
-                return ground;
-            case TerrainType.Water:
-                return water;
-            case TerrainType.Grass:
-                return grass;
-            case TerrainType.Edge:
-                return edge;
-            default:
-                return ground;
+            var key = tile.type.ToString();
+            _cache.Add(key, tile);
         }
     }
 
-    public Corner GetCorner()
+    public static IFlyweight GetFlyweight(TerrainType type)
+    {
+        var key = type.ToString();
+        return _cache[key];
+    }
+
+    public static Corner GetCorner()
     {
         return new Corner();
     }

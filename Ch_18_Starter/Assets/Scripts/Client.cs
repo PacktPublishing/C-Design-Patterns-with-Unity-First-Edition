@@ -6,7 +6,7 @@ public class Client : MonoBehaviour
 {
     public int gridRows = 10;
     public int gridColumns = 10;
-    public Transform parent;
+    public Transform gridParent;
 
     void Start()
     {
