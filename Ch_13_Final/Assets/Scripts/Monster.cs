@@ -15,9 +15,9 @@ public class Monster
     private Monster(MonsterType type, string name)
     {
         _monsterType = type;
-
         _name = name;
-        _level = type.Level; ;
+
+        _level = type.Level;
         _hp = type.HP;
         _toughness = type.Toughness;
         _warCry = type.WarCry;

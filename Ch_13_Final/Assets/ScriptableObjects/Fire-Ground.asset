@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75fa001eac613406f913dc34ac4c4529, type: 3}
   m_Name: Fire-Ground
   m_EditorClassIdentifier: 
-  Parent: {fileID: 11400000, guid: 0ac92bd17ccc842ab8d52dc73888bd48, type: 2}
+  BaseType: {fileID: 11400000, guid: 0ac92bd17ccc842ab8d52dc73888bd48, type: 2}
   HP: 110
-  Color: {r: 1.7924528, g: 0.5999305, b: 0.07137771, a: 1}
+  Color: {r: 2.7452831, g: 0.6673478, b: 0.13879493, a: 1}
   Element: 4
   Weaknesses: 0500000001000000

@@ -7,7 +7,7 @@ public enum Element { None, Water, Fire, Grass, Ground, Ice }
 [CreateAssetMenu(fileName = "SOType", menuName = "SO Type")]
 public class SOType : ScriptableObject
 {
-    public SOType Parent;
+    public SOType BaseType;
 
     public int HP;
     public Color Color;
@@ -18,22 +18,22 @@ public class SOType : ScriptableObject
     private void Configure()
     {
         if (HP == 0)
-            HP = Parent.HP;
+            HP = BaseType.HP;
         if (Element == Element.None)
-            Element = Parent.Element;
+            Element = BaseType.Element;
 
-        Color = Utilities.MixColors(Color, Parent.Color);
+        Color = Utilities.MixColors(Color, BaseType.Color);
 
-        foreach (var parentWeakness in Parent.Weaknesses)
+        foreach (var baseWeakness in BaseType.Weaknesses)
         {
-            if (!Weaknesses.Contains(parentWeakness))
-                Weaknesses.Add(parentWeakness);
+            if (!Weaknesses.Contains(baseWeakness))
+                Weaknesses.Add(baseWeakness);
         }
     }
 
     [ContextMenu("Inherit", true)]
     bool Validate()
     {
-        return Parent != null;
+        return BaseType != null;
     }
 }
