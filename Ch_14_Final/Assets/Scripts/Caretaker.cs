@@ -22,13 +22,13 @@ public class Caretaker
     {
         if(_mementos.Count == 0)
         {
-            _originator.SetMemento(new Memento(0, 0, 0));
+            _originator.RestoreMemento(new Memento(0, 0, 0));
             return;
         }
 
         var lastMemento = _mementos.Last();
         _mementos.Remove(lastMemento);
 
-        _originator.SetMemento(lastMemento);
+        _originator.RestoreMemento(lastMemento);
     }
 }

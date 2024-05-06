@@ -11,11 +11,6 @@ public class HolyMail : Decorator
         _target = target;
     }
 
-    public override int Strength()
-    {
-        return base.Strength();
-    }
-
     public override void Battle()
     {
         AddEffect();

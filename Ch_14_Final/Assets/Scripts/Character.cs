@@ -24,7 +24,7 @@ public class Character : MonoBehaviour
         return new Memento(HP, MP, INT);
     }
 
-    public void SetMemento(Memento memento)
+    public void RestoreMemento(Memento memento)
     {
         HP = memento.HP;
         MP = memento.MP;
