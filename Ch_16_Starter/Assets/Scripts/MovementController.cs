@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class MovementController : MonoBehaviour
 {
-    public float moveSpeed = 10f;
+    public int moveSpeed = 10;
     public float rotateSpeed = 75f;
     public float jumpVelocity = 5.5f;
     public float distanceToGround = 0.1f;
